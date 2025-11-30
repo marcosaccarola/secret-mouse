@@ -102,7 +102,7 @@ export class GameScene extends Phaser.Scene {
     camera.setZoom(1);
 
     // Controllo zoom con rotella mouse
-    this.input.on('wheel', (pointer: any, gameObjects: any, deltaX: number, deltaY: number) => {
+    this.input.on('wheel', (_pointer: any, _gameObjects: any, _deltaX: number, deltaY: number) => {
       const zoomAmount = deltaY > 0 ? -0.1 : 0.1;
       const newZoom = Phaser.Math.Clamp(camera.zoom + zoomAmount, 0.5, 2);
       camera.setZoom(newZoom);

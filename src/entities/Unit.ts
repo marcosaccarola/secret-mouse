@@ -112,9 +112,10 @@ export class Unit extends Phaser.Physics.Arcade.Sprite {
     this.target = new Phaser.Math.Vector2(x, y);
   }
 
-  public stop(): void {
+  public stop(): this {
     this.target = null;
     this.setVelocity(0, 0);
+    return this;
   }
 
   public takeDamage(amount: number): void {
@@ -136,7 +137,7 @@ export class Unit extends Phaser.Physics.Arcade.Sprite {
     this.destroy();
   }
 
-  public update(time: number, delta: number): void {
+  public update(_time: number, delta: number): void {
     // Movimento verso target
     if (this.target) {
       this.moveTowardsTarget(delta);
@@ -149,7 +150,7 @@ export class Unit extends Phaser.Physics.Arcade.Sprite {
     }
   }
 
-  private moveTowardsTarget(delta: number): void {
+  private moveTowardsTarget(_delta: number): void {
     if (!this.target) return;
 
     const distance = Phaser.Math.Distance.Between(

@@ -29,7 +29,7 @@ export class PreloadScene extends Phaser.Scene {
     const height = this.cameras.main.height;
 
     // Testo
-    const loadingText = this.add.text(width / 2, height / 2 - 50, 'Caricamento...', {
+    this.add.text(width / 2, height / 2 - 50, 'Caricamento...', {
       fontSize: '32px',
       color: '#ffffff'
     }).setOrigin(0.5);
